@@ -1,0 +1,161 @@
+* {
+   box-sizing: border-box;
+}
+
+main {
+   background-color: lightgrey;
+   margin: 2em auto;
+}
+
+div.wrapper {
+   max-width: 1920px;
+}
+
+/* HEADER */
+/* --------------------------------------- */
+
+header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 0 1em;
+}
+
+header h1 {
+   font-size: 200%;
+   text-align: center;
+}
+
+header h1 a {
+   text-decoration: none;
+   color: black;
+}
+
+nav ul {
+   list-style-type: none;
+   display: flex;
+}
+
+nav ul li {
+   text-align: center;
+}
+
+nav a {
+   padding: 1em 2em;
+   display: block;
+   color: black;
+   text-decoration: none;
+}
+
+nav a:hover {
+   background-color: crimson;
+}
+
+/* HOME */
+/* --------------------------------------- */
+
+h1.slogan {
+   color: crimson;
+   font-size: 150%;
+   padding: 2em;
+   text-align: center;
+}
+
+div.location {
+   position: relative;
+   text-align: center;
+   color: white;
+}
+
+img.homeimg {
+   display: block;
+   max-width: 100%;
+   margin: 0 auto;
+}
+
+.text {
+   position: absolute;
+   top: 50%;
+   bottom: 50%;
+   transform: translate(-50% ,-50%);
+}
+
+div.hours {
+   text-align: center;
+   margin: 1em;
+   padding: 1em;
+   font-size: 150%;
+}
+
+img.food {
+   max-width: 50%;
+   float: left;
+   clear: both;
+}
+
+img.owner {
+   max-width: 50%;
+   float: right;
+   clear: both;
+}
+
+img.events {
+   max-width: 50%;
+   float: left;
+   clear: both;
+}
+
+/* MENUS */
+/* --------------------------------------- */
+
+.mainh1 {
+   font-size: 150%;
+   color: crimson;
+   text-align: center;
+   padding: 1em;
+}
+
+div.items {
+   font-size: 115%;
+   text-align: center;
+   width: 960px;
+   margin: 0 auto;
+}
+
+div.items:last-child {
+   padding-bottom: 1em;
+}
+
+/* EVENTS */
+/* --------------------------------------- */
+
+div.info {
+   width: 960px;
+   font-size: 115%;
+   margin: 0 auto;
+}
+
+/* ABOUT */
+/* --------------------------------------- */
+
+
+
+/* FOOTER */
+/* --------------------------------------- */
+
+footer {
+   clear: both;
+   padding: 2em;
+   margin: 2em;
+   text-align: center;
+}
+
+footer a {
+   text-decoration: none;
+   color: black;
+}
+
+footer a:hover {
+   color: crimson;
+   text-decoration: underline;
+}
