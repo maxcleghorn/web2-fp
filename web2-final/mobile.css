@@ -1,0 +1,432 @@
+* {
+   box-sizing: border-box;
+}
+
+body {
+   font-family: 'Hind Siliguri', sans-serif;
+}
+
+/* HEADER */
+/* --------------------------------------- */
+
+header {
+   background-color: black;
+   flex-direction: column;
+   position: relative;
+}
+
+header nav ul.menu {
+   list-style-type: none;
+   overflow: hidden;
+   display: flex;
+}
+
+header img {
+   width: 50%;
+   padding: 1rem 0;
+}
+
+ /* ↓ Navbar ↓ */
+ header nav ul.menu {
+   max-height: 0; ← hides menu until opened
+   transition: max-height .5s ease-out; /* ← open speed */
+   text-align: center;
+   flex-direction: column;
+}
+
+header nav ul.menu li {
+   display: flex;
+   flex-direction: column;
+   margin: 1rem;
+}
+
+/* ↓ Navbar buttons ↓ */
+header nav ul.menu li a {
+   text-decoration: none;
+   color: white;
+   padding: 1rem;
+   font-weight: bold;
+   font-size: 115%;
+}
+
+header nav ul.menu li a:hover {
+   color: crimson;
+}
+
+header input.menu-btn,
+header label.menu-icon {
+    display: none; /* ← hides hamburger icon */
+}
+
+/* Hamburger Icon 
+-------------------------------------*/
+header label.menu-icon {
+   display: inline-block;
+   padding: 45px 20px;
+   position: absolute;
+   right: 0; /* ← horizontal position */
+   top: 3px; /* ← vertical position */
+}
+
+/* ↓ center hamburger line ↓ */
+header label.menu-icon span.navicon {
+   display: block;
+   position: relative;
+   transition: background .2s ease-out;
+   height: 5px; /* ← thickness of lines */
+   width: 25px; /* ← width of lines */
+   background: white; /* ← icon color */
+}
+
+/* ↓ top & bottom hamburger line ↓ */
+header label.menu-icon .navicon:before,
+header label.menu-icon .navicon:after {
+   content: '';
+   display: block;
+   height: 100%;
+   width: 100%;
+   position: absolute;
+   transition: all .2s ease-out;
+   background: white; /* ← icon color */
+}
+
+header label.menu-icon .navicon:before {
+   top: 9px; /* ← space below top line */
+}
+
+header label.menu-icon .navicon:after {
+   top: -9px; /* ← space above bottom line */
+}
+
+/* Icon Animation
+-------------------------------------*/
+header input.menu-btn:checked ~ ul.menu {
+   max-height: 300px; 
+   /* ↑ maximum height of the menu bar ↑
+        increase this if some of your
+        menu links are getting cut off */
+}
+
+/* ↓ hides center line for the X ↓ */
+header input.menu-btn:checked ~ label.menu-icon span.navicon {
+   background: transparent;
+}
+
+header input.menu-btn:checked ~ label.menu-icon span.navicon:before {
+   transform: rotate(-45deg);
+}
+
+header input.menu-btn:checked ~ label.menu-icon span.navicon:after {
+   transform: rotate(45deg);
+}
+
+header input.menu-btn:checked ~ label.menu-icon:not(.steps) .navicon:before,
+header input.menu-btn:checked ~ label.menu-icon:not(.steps) .navicon:after {
+   top: 0;
+}
+
+/* HOME */
+/* --------------------------------------- */
+
+h1.slogan {
+   font-family: 'Bebas Neue', cursive;
+   color: crimson;
+   font-size: 300%;
+   padding: .5em;
+   text-align: center;
+}
+
+div.location {
+   position: relative;
+   text-align: center;
+   color: white;
+   background-color: black;
+}
+
+.text {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   font-size: 115%;
+}
+
+.text h2 {
+   font-family: "keedy-sans", sans-serif;
+   font-weight: 700;
+   font-style: normal;
+   font-size: 45px;
+   padding-bottom: .3em;
+}
+
+.text p {
+   line-height: .5em;
+   font-size: 95%;
+}
+
+img.homeimg {
+   display: block;
+   width: 100%;
+   margin: 0 auto;
+   opacity: 60%;
+}
+
+/* Hours
+--------------------------- */
+
+div.hours {
+   text-align: center;
+   margin: 2em auto;
+}
+
+.hours h2 {
+   font-family: "keedy-sans", sans-serif;
+   font-weight: 700;
+   font-style: normal;
+   font-size: 50px;
+   color: crimson;
+   margin-top: 3rem;
+}
+
+.hours p {
+   font-size: 25px;
+   margin-top: .5em;
+}
+
+/* HOME GRID */
+/* ------------------------------------------------ */
+
+div.homegrid {
+   display: grid;
+   grid-template-columns: 1fr;
+}
+
+.homegrid section {
+   
+}
+
+.homegrid section h2 {
+   font-family: 'Bebas Neue', cursive;
+   font-size: 50px;
+   margin-top: 3rem;
+   margin-bottom: .5rem;
+}
+
+.homegrid section p {
+   display: none;
+}
+
+.homegrid img {
+   
+}
+
+.homegrid img:hover {
+   opacity: 50%;
+}
+
+img.food {
+   width: 100%;
+   height: auto;
+}
+
+section.foodtext {
+   grid-row: 1/2;
+   text-align: center;
+}
+
+img.owner {
+   width: 100%;
+   height: auto;
+}
+
+section.ownertext {
+   grid-row: 3/4;
+   text-align: center;
+}
+
+img.events {
+   width: 100%;
+   height: auto;
+}
+
+section.eventstext {
+   grid-row: 5/6;
+   text-align: center;
+}
+
+/* MENUS */
+/* --------------------------------------- */
+
+div.menulinks {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding-top: 2em;
+   margin: 0 auto;
+   font-size: 100%;
+}
+
+.menulinks h2 {
+   padding: 1.5rem;
+}
+
+.menulinks h2 a {
+   color: black;
+   padding: 1rem;
+}
+
+.menulinks h2 a:hover {
+   color: crimson;
+}
+
+.mainh1 {
+   font-family: "keedy-sans", sans-serif;
+   font-weight: 700;
+   font-style: normal;
+   font-size: 40px;
+   color: crimson;
+   text-align: center;
+   padding-top: 1em;
+}
+
+div.items {
+   text-align: center;
+   margin: 0 auto;
+}
+
+.items h2 {
+   font-family: 'Bebas Neue', cursive;
+   font-size: 200%;
+   padding: 1em 0 .2em 0;
+}
+
+.items dl dt {
+   font-size: 120%;
+   padding: .25rem;
+}
+
+.items dl dd {
+   padding-bottom: .5em;
+   font-weight: 100;
+   margin: 0 1rem;
+}
+
+.items p {
+   line-height: 1.2em;
+   font-size: 115%;
+   padding: 1em 0;
+   margin: 0 1rem;
+}
+
+.cheese {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   grid-template-rows: 1fr;
+   margin: .5rem;
+}
+
+.cheese h3 {
+   padding: .5em 0;
+   font-size: 110%;
+}
+
+h3.pdf {
+   display: inline-block;
+   font-size: 140%;
+   background-color: crimson;
+   padding: 1.5rem;
+   margin-bottom: 2rem;
+   border-radius: 2rem;
+   color: white;
+}
+
+/* EVENTS */
+/* --------------------------------------- */
+
+div.info {
+   font-size: 115%;
+   margin: 1.5rem;
+   line-height: 1.6;
+}
+
+.info h2 {
+   font-family: 'Bebas Neue', cursive;
+   font-size: 30px;
+   padding: .5rem 0;
+} 
+
+.info h3 {
+   font-size: 115%;
+   padding: .5rem 0;
+}
+
+.info ul {
+   list-style-type: none;
+}
+
+.info ul li:before {
+   content: "- ";
+}
+
+.info p.note {
+   font-size: 80%;
+   font-weight: lighter;
+   padding: 1rem 0;
+   line-height: 1.5;
+}
+
+.info dl dt {
+   font-size: 100%;
+}
+
+.info dl dd {
+   padding-bottom: .5em;
+   font-weight: lighter;
+   font-size: 90%;
+}
+
+/* ABOUT */
+/* --------------------------------------- */
+
+img.interior {
+   display: block;
+   margin: 0 auto;
+   width: 90%;
+   border: 5px solid black;
+}
+
+img.img1 {
+   margin: 0 auto;
+   border: 5px solid black;
+   width: 100%;
+}
+
+img.img2 {
+   margin: 0 auto;
+   border: 5px solid black;
+   width: 100%;
+}
+
+/* FOOTER */
+/* --------------------------------------- */
+
+footer {
+   display: flex;
+   justify-content: space-around;
+   padding: 2em;
+   background-color: black;
+   margin-top: 2rem;
+}
+
+footer a {
+   color: white;
+   font-size: 140%;
+}
+
+footer i {
+   font-size: 115%;
+}
+
+footer a:hover {
+   color: crimson;
+}
